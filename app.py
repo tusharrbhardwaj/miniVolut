@@ -1,15 +1,18 @@
 from flask import Flask
+from datetime import datetime
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
+    current_time = datetime.now().strftime("%H:%M:%S")
 
-    return """
+    return f"""
     <h1>MiniVault</h1>
 
-    <p>Hello Tushar</p>
+    <p>Hello Tushar :)</p>
+    <p> <h2> current time is {current_time} </h2> </p>
     """
 
 @app.route("/about")
