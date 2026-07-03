@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template as webpage
 from datetime import datetime
 
 app = Flask(__name__)
@@ -6,14 +6,21 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    current_time = datetime.now().strftime("%H:%M:%S")
+    now = datetime.now()
 
-    return f"""
-    <h1>MiniVault</h1>
+    current_time = now.strftime("%H:%M:%S")
 
-    <p>Hello Tushar :)</p>
-    <p> <h2> current time is {current_time} </h2> </p>
-    """
+    hour = now.hour
+    
+    name = "Tushar"
+    if hour >= 5 and hour <= 11:
+        greet = "Good Morning"
+    elif hour >= 12 and hour <= 17:
+        greet = "Good Afternoon"
+    else:
+        greet = "Good Evening"
+
+    return webpage("index.html",greeting = greet, time = current_time, name = name )
 
 @app.route("/about")
 def about():

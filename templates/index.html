@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for("static", filename="style.css")}}">
+<script src="https://kit.fontawesome.com/6b4b8d4d5f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+<div class="logo">Portfolio<span>.</span></div>
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Skills</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+<div class="social">
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-instagram"></i>
+</div>
+</header>
+
+<section class="hero">
+<div class="left">
+<p class="hello">Hello,{{greeting}}</p>
+<h1>I'm <span>{{name}}</span></h1>
+<h2>Software Engineer</h2>
+<p class="location">current time is {{time}}</p>
+<a class="btn" href="#">Hire Me</a>
+</div>
+
+<div class="right">
+<img src="images/profile.png" alt="Profile">
+<div class="bg-text">folio</div>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
